@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Metropolis;
+}
+
+:root {
+  --primary-color: #007F61;
+  --secondary-color: #C8C8C8;
+  --border-radius: 0.25rem;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+section {
+  width: 80vw;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+/* header */
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+header h1 {
+  color: var(--primary-color);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+header hr {
+  height: 0px;
+  background-color: var(--secondary-color);
+  flex: 1;
+}
+
+article input[type="radio"] {
+  display: none;
+}
+
+/* products */
+article .product-one,
+article .product-two,
+article .product-three {
+  padding: 1rem;
+  border: 1px solid var(--secondary-color);
+  width: 100%;
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+article .product-one .productContainer,
+article .product-two .productContainer,
+article .product-three .productContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+article .product-one .productContainer .productDetail,
+article .product-two .productContainer .productDetail,
+article .product-three .productContainer .productDetail {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+article .product-two .productContainer .popular {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+article .product-two .productContainer .popular del {
+  color: gainsboro;
+}
+
+article .product-one table,
+article .product-two table,
+article .product-three table {
+  width: 60%;
+  display: none;
+}
+
+article .product-one table th,
+article .product-two table th,
+article .product-three table th {
+  text-align: left;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+select {
+  width: 100%;
+  padding: 5px;
+}
+
+.productDetail .radio-button {
+  width: 1rem;
+  height: 1rem;
+  border: 0.5px solid var(--secondary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radio-button .dot {
+  width: 70%;
+  height: 70%;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: none;
+}
+
+article input[type="radio"]:checked + label {
+  border: 1px solid var(--primary-color);
+  background-color: rgba(203, 222, 222, 0.1);
+}
+article input[type="radio"]:checked + label .popular p {
+ color: var(--primary-color);
+}
+
+article input[type="radio"]:checked + label .radio-button {
+  border: 0.5px solid var(--primary-color);
+}
+
+article input[type="radio"]:checked + label .radio-button .dot {
+  display: block;
+}
+
+article input[type="radio"]:checked + .product-one table,
+article input[type="radio"]:checked + .product-two table,
+article input[type="radio"]:checked + .product-three table {
+  display: block;
+}
+
+.productDetail .text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+}
+.productDetail .offer {
+  font-size: 12px;
+}
+
+/* shipping */
+.shipping {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.shipping p {
+  font-size: large;
+}
+
+.shipping p:first-child {
+  color: var(--primary-color);
+}
+
+/* btnContainer */
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btnContainer button {
+  padding: 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: large;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: var(--border-radius);
+}
+
+.btnContainer i {
+  align-self: flex-end;
+  color: gainsboro;
+}
+/* Responsive design*/
+@media screen and (min-width: 480px) {
+  section {
+    width: 80vw;
+  }
+  article .product-one table,
+  article .product-two table,
+  article .product-three table {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  section {
+    width: 70vw;
+  }
+  article .product-one table,
+  article .product-two table,
+  article .product-three table {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  section {
+    width: 60vw;
+  }
+  article .product-one table,
+  article .product-two table,
+  article .product-three table {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  section {
+    width: 50vw;
+  }
+  article .product-one table,
+  article .product-two table,
+  article .product-three table {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  section {
+    width: 40vw;
+  }
+  article .product-one table,
+  article .product-two table,
+  article .product-three table {
+    width: 50%;
+  }
+}
